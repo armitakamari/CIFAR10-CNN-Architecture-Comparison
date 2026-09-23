@@ -1,0 +1,47 @@
+[
+  {
+    "name": "CustomCNN_NoAug",
+    "test_accuracy": 0.6454,
+    "training_seconds": 37.98539991599682,
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "test_samples": 10000,
+    "epochs": 10
+  },
+  {
+    "name": "CustomCNN_Aug",
+    "test_accuracy": 0.6402,
+    "training_seconds": 43.1816592499963,
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "test_samples": 10000,
+    "epochs": 10
+  },
+  {
+    "name": "CustomCNN_Deep",
+    "test_accuracy": 0.6056,
+    "training_seconds": 66.46192629101279,
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "test_samples": 10000,
+    "epochs": 10
+  },
+  {
+    "name": "ResCNN",
+    "test_accuracy": 0.6085,
+    "training_seconds": 65.80679824999243,
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "test_samples": 10000,
+    "epochs": 10
+  },
+  {
+    "name": "ResNet18_TL",
+    "test_accuracy": 0.8408,
+    "training_seconds": 278.10717075000866,
+    "train_samples": 5000,
+    "val_samples": 1000,
+    "test_samples": 10000,
+    "epochs": 10
+  }
+]
