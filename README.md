@@ -24,7 +24,6 @@ Results below are from a subset run (5,000 train / 1,000 val / 10,000 test image
 | ResCNN | 60.9% | 66s |
 | **ResNet-18 (Transfer Learning)** | **84.1%** | 278s |
 
-![Accuracy comparison](results/local_run/accuracy_comparison.png)
 
 Transfer learning clearly wins on accuracy at this data scale, at roughly 4–7x the training cost of the custom CNNs. Test accuracy for CustomCNN with and without augmentation is nearly identical, but the training curves tell a more interesting story: the no-augmentation model overfits sharply (91.9% train vs. 65.6% val by epoch 10), while the augmented model shows almost no train/val gap (63.2% vs. 65.7%). Augmentation is doing its job as a regularizer — it just hasn't yet translated into higher test accuracy at only 10 epochs; a longer run would likely let the augmented model pull ahead.
 
@@ -62,30 +61,6 @@ This matches the well-known CIFAR-10 difficulty ranking: *cat* and *dog* share p
 - **Data augmentation ablation** — same architecture, with and without augmentation
 - ResNet-18 inputs resized to 224×224 to preserve pretrained spatial features
 - Deterministic, seeded train/val/test splits for fair comparison across models
-
-## Repository Structure
-
-```
-CIFAR10-CNN-Architecture-Comparison/
-├── data/                          # Auto-downloaded CIFAR-10
-├── notebooks/
-│   ├── demo.ipynb                 # Interactive walkthrough
-│   └── run_comparison.ipynb       # Runs all 5 models end-to-end and displays results
-├── results/
-│   └── local_run/                 # Saved metrics, plots, and Grad-CAM outputs from a full run
-│       ├── config.json
-│       ├── comparison.csv / comparison.json
-│       ├── accuracy_comparison.png
-│
-│                                   #   gradcam_correct.png, gradcam_misclassified.png, predictions.csv
-├── src/
-│   ├── dataset.py                 # Transforms & DataLoaders
-│   ├── models.py                  # Model definitions
-│   ├── interpretability.py        # Grad-CAM
-│   └── utils.py                   # Training/metrics/plots
-├── main.py                        # Entry point
-└── requirements.txt
-```
 
 ## Setup
 
